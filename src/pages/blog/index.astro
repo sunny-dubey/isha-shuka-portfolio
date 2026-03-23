@@ -17,12 +17,12 @@ const allTags = [...new Set(sortedPosts.flatMap((post) => post.data.tags))].sort
   />
 
   <!-- Tags -->
-  <section class="bg-white border-b border-beige-dark">
+  <section class="bg-white border-b border-cream-dark">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
       <div class="flex flex-wrap gap-2">
         <span class="text-sm text-charcoal/40 py-1 mr-2">Filter:</span>
         {allTags.map((tag) => (
-          <span class="text-xs font-medium bg-beige text-olive-dark px-3 py-1.5 rounded-full">
+          <span class="tag-pill">
             {tag}
           </span>
         ))}
@@ -31,7 +31,7 @@ const allTags = [...new Set(sortedPosts.flatMap((post) => post.data.tags))].sort
   </section>
 
   <!-- Blog Posts -->
-  <section class="py-16 bg-beige">
+  <section class="py-16 bg-gradient-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedPosts.map((post) => (

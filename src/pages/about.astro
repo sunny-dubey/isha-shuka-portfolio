@@ -31,10 +31,10 @@ const experience = [
 ];
 ---
 
-<BaseLayout title="About — Isha Shukla" description="Learn more about Isha Shukla — an SEO and organic growth specialist, tech content writer, and photographer.">
+<BaseLayout title="About — Isha Shukla" description="Learn more about Isha Shukla — an SEO and organic growth specialist and tech content writer.">
   <Hero
     title="About Me"
-    subtitle="SEO strategist, content writer, and photographer with a passion for helping businesses grow."
+    subtitle="SEO strategist and content writer with a passion for helping businesses grow."
   />
 
   <!-- Bio Section -->
@@ -42,8 +42,8 @@ const experience = [
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="fade-in">
-          <div class="aspect-[4/5] bg-beige rounded-2xl flex items-center justify-center overflow-hidden">
-            <div class="text-center text-charcoal/40 p-8">
+          <div class="aspect-[4/5] rounded-2xl flex items-center justify-center overflow-hidden bg-gradient-cta">
+            <div class="text-center text-white/60 p-8">
               <svg class="w-24 h-24 mx-auto mb-4 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
@@ -53,7 +53,7 @@ const experience = [
         </div>
 
         <div class="fade-in">
-          <h2 class="font-heading text-3xl font-bold text-charcoal mb-6">
+          <h2 class="font-accent text-4xl font-semibold text-charcoal mb-6">
             Hi, I'm Isha.
           </h2>
           <div class="space-y-4 text-charcoal/70 leading-relaxed">
@@ -78,16 +78,16 @@ const experience = [
   </section>
 
   <!-- Skills -->
-  <section class="py-20 bg-beige">
+  <section class="py-20 bg-gradient-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal text-center mb-12 fade-in">
         What I Do
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
         {skills.map((skill) => (
-          <div class="bg-white rounded-xl p-6 border border-beige-dark">
+          <div class="card-elevated p-6">
             <h3 class="font-heading text-xl font-semibold text-charcoal mb-3 flex items-center gap-2">
-              <span class="w-2 h-2 bg-terracotta rounded-full"></span>
+              <span class="w-2 h-2 bg-rose rounded-full"></span>
               {skill.name}
             </h3>
             <p class="text-charcoal/60 leading-relaxed">{skill.description}</p>
@@ -105,11 +105,11 @@ const experience = [
       </h2>
       <div class="space-y-8 fade-in">
         {experience.map((exp) => (
-          <div class="border-l-2 border-terracotta pl-6 pb-2">
+          <div class="border-l-2 border-rose pl-6 pb-2">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <h3 class="font-heading text-xl font-semibold text-charcoal">{exp.role}</h3>
               <span class="text-charcoal/40">·</span>
-              <span class="text-terracotta font-medium">{exp.company}</span>
+              <span class="text-rose font-medium">{exp.company}</span>
             </div>
             <p class="text-sm text-charcoal/40 mb-2">{exp.period}</p>
             <p class="text-charcoal/60 leading-relaxed">{exp.description}</p>
@@ -120,7 +120,7 @@ const experience = [
   </section>
 
   <!-- CTA -->
-  <section class="py-20 bg-olive text-white">
+  <section class="py-20 bg-gradient-cta text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-in">
       <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">
         Interested in Working Together?
@@ -130,7 +130,7 @@ const experience = [
       </p>
       <a
         href="/contact"
-        class="inline-block bg-white text-olive px-8 py-3 rounded-lg font-semibold hover:bg-beige transition-colors"
+        class="inline-block bg-white text-rose px-8 py-3 rounded-full font-semibold hover:bg-cream transition-colors shadow-lg"
       >
         Get in Touch
       </a>

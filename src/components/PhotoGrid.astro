@@ -11,14 +11,14 @@ const displayPhotos = limit ? photos.slice(0, limit) : photos;
 <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
   {displayPhotos.map((photo, index) => (
     <div
-      class="break-inside-avoid cursor-pointer group"
+      class="break-inside-avoid cursor-pointer photo-frame"
       data-lightbox-trigger
       data-index={index}
     >
       <img
         src={photo.src}
         alt={photo.alt}
-        class="w-full rounded-lg group-hover:opacity-90 transition-opacity"
+        class="w-full"
         loading="lazy"
       />
     </div>

@@ -16,16 +16,17 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 });
 ---
 
-<article class="bg-white rounded-xl border border-beige-dark p-6 hover:shadow-lg transition-shadow group">
+<article class="card-elevated p-6 group relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-cta"></div>
   <a href={`/blog/${slug}`} class="block">
     <div class="flex flex-wrap gap-2 mb-3">
       {tags.map((tag) => (
-        <span class="text-xs font-medium bg-beige text-olive-dark px-2.5 py-1 rounded-full">
+        <span class="tag-pill">
           {tag}
         </span>
       ))}
     </div>
-    <h3 class="font-heading text-xl font-semibold text-charcoal group-hover:text-terracotta transition-colors mb-2">
+    <h3 class="font-heading text-xl font-semibold text-charcoal group-hover:text-rose transition-colors mb-2">
       {title}
     </h3>
     <p class="text-charcoal/60 text-sm mb-4 line-clamp-2">

@@ -10,29 +10,32 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-beige-dark">
+<header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-cream-dark">
   <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-    <a href="/" class="font-heading text-2xl font-bold text-charcoal hover:text-terracotta transition-colors">
-      Isha Shukla
+    <a href="/" class="group flex items-baseline transition-all duration-300">
+      <span class="font-hindi text-2xl leading-none gradient-text group-hover:opacity-80">ईशा</span>
+      <span class="text-lg text-rose group-hover:text-lavender transition-colors duration-300">.</span>
     </a>
 
     <!-- Desktop Nav -->
     <ul class="hidden md:flex items-center gap-8">
-      {navLinks.map((link) => (
-        <li>
-          <a
-            href={link.href}
-            class:list={[
-              'text-sm font-medium transition-colors hover:text-terracotta',
-              currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-                ? 'text-terracotta'
-                : 'text-charcoal'
-            ]}
-          >
-            {link.label}
-          </a>
-        </li>
-      ))}
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'text-sm font-medium transition-colors hover:text-rose relative pb-1',
+                isActive ? 'text-rose' : 'text-charcoal'
+              ]}
+            >
+              {link.label}
+              {isActive && <span class="absolute bottom-0 left-0 w-full h-0.5 bg-rose rounded-full"></span>}
+            </a>
+          </li>
+        );
+      })}
     </ul>
 
     <!-- Mobile Menu Button -->
@@ -49,16 +52,16 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-beige-dark">
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-cream-dark">
     <ul class="flex flex-col px-6 py-4 gap-4">
       {navLinks.map((link) => (
         <li>
           <a
             href={link.href}
             class:list={[
-              'block text-base font-medium transition-colors hover:text-terracotta',
+              'block text-base font-medium transition-colors hover:text-rose',
               currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-                ? 'text-terracotta'
+                ? 'text-rose'
                 : 'text-charcoal'
             ]}
           >

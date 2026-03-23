@@ -4,14 +4,23 @@ interface Props {
   subtitle: string;
   ctaPrimary?: { text: string; href: string };
   ctaSecondary?: { text: string; href: string };
+  gradientTitle?: boolean;
 }
 
-const { title, subtitle, ctaPrimary, ctaSecondary } = Astro.props;
+const { title, subtitle, ctaPrimary, ctaSecondary, gradientTitle = false } = Astro.props;
 ---
 
-<section class="bg-beige py-20 md:py-32">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-    <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-charcoal leading-tight mb-6 fade-in">
+<section class="bg-gradient-hero py-20 md:py-32 relative overflow-hidden">
+  <!-- Decorative blobs -->
+  <div class="blob-decorator w-72 h-72 bg-rose top-[-50px] left-[-100px]"></div>
+  <div class="blob-decorator w-64 h-64 bg-lavender bottom-[-40px] right-[-80px]"></div>
+  <div class="blob-decorator w-48 h-48 bg-rosegold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <h1 class:list={[
+      'font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 fade-in',
+      gradientTitle ? 'gradient-text' : 'text-charcoal'
+    ]}>
       {title}
     </h1>
     <p class="text-lg md:text-xl text-charcoal/70 max-w-2xl mx-auto mb-10 fade-in">
@@ -20,18 +29,12 @@ const { title, subtitle, ctaPrimary, ctaSecondary } = Astro.props;
     {(ctaPrimary || ctaSecondary) && (
       <div class="flex flex-wrap gap-4 justify-center fade-in">
         {ctaPrimary && (
-          <a
-            href={ctaPrimary.href}
-            class="bg-terracotta text-white px-8 py-3 rounded-lg font-medium hover:bg-terracotta-dark transition-colors"
-          >
+          <a href={ctaPrimary.href} class="btn-primary">
             {ctaPrimary.text}
           </a>
         )}
         {ctaSecondary && (
-          <a
-            href={ctaSecondary.href}
-            class="border-2 border-charcoal text-charcoal px-8 py-3 rounded-lg font-medium hover:bg-charcoal hover:text-white transition-colors"
-          >
+          <a href={ctaSecondary.href} class="btn-secondary">
             {ctaSecondary.text}
           </a>
         )}

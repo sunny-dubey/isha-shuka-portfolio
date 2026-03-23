@@ -21,10 +21,16 @@ const photos = [
   <!-- Hero -->
   <Hero
     title="Isha Shukla"
-    subtitle="SEO & Organic Growth | Tech Content Writer | Photographer"
+    subtitle="SEO & Organic Growth | Tech Content Writer"
     ctaPrimary={{ text: 'Read My Blog', href: '/blog' }}
     ctaSecondary={{ text: 'Get in Touch', href: '/contact' }}
+    gradientTitle={true}
   />
+
+  <!-- Section Divider -->
+  <div class="section-divider py-4 bg-white">
+    <span class="section-divider-dot"></span>
+  </div>
 
   <!-- About Teaser -->
   <section class="py-20 bg-white">
@@ -40,7 +46,7 @@ const photos = [
         </p>
         <a
           href="/about"
-          class="inline-block text-terracotta font-medium hover:text-terracotta-dark transition-colors border-b-2 border-terracotta hover:border-terracotta-dark"
+          class="inline-block text-rose font-medium hover:text-rose-dark transition-colors border-b-2 border-rose hover:border-rose-dark"
         >
           More about me &rarr;
         </a>
@@ -48,8 +54,13 @@ const photos = [
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <div class="section-divider py-4 bg-gradient-section">
+    <span class="section-divider-dot"></span>
+  </div>
+
   <!-- Featured Blog Posts -->
-  <section class="py-20 bg-beige">
+  <section class="py-20 bg-gradient-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12 fade-in">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
@@ -57,27 +68,31 @@ const photos = [
         </h2>
         <p class="text-charcoal/60">Thoughts on SEO, content strategy, and growing businesses organically.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
-        {latestPosts.map((post) => (
-          <BlogCard
-            title={post.data.title}
-            description={post.data.description}
-            date={post.data.date}
-            tags={post.data.tags}
-            slug={post.id}
-          />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {latestPosts.map((post, i) => (
+          <div class:list={['fade-in', `fade-in-delay-${i + 1}`]}>
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              tags={post.data.tags}
+              slug={post.id}
+            />
+          </div>
         ))}
       </div>
       <div class="text-center mt-10">
-        <a
-          href="/blog"
-          class="inline-block bg-charcoal text-white px-8 py-3 rounded-lg font-medium hover:bg-charcoal/80 transition-colors"
-        >
+        <a href="/blog" class="btn-primary">
           View All Posts
         </a>
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider py-4 bg-white">
+    <span class="section-divider-dot"></span>
+  </div>
 
   <!-- Photography Preview -->
   <section class="py-20 bg-white">
@@ -90,21 +105,18 @@ const photos = [
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
         {photos.map((photo) => (
-          <div class="overflow-hidden rounded-lg aspect-square">
+          <div class="photo-frame aspect-square">
             <img
               src={photo.src}
               alt={photo.alt}
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
         ))}
       </div>
       <div class="text-center mt-10">
-        <a
-          href="/photography"
-          class="inline-block border-2 border-charcoal text-charcoal px-8 py-3 rounded-lg font-medium hover:bg-charcoal hover:text-white transition-colors"
-        >
+        <a href="/photography" class="btn-secondary">
           View Gallery
         </a>
       </div>
@@ -112,7 +124,7 @@ const photos = [
   </section>
 
   <!-- CTA -->
-  <section class="py-20 bg-terracotta text-white">
+  <section class="py-20 bg-gradient-cta text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-in">
       <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">
         Let's Work Together
@@ -122,7 +134,7 @@ const photos = [
       </p>
       <a
         href="/contact"
-        class="inline-block bg-white text-terracotta px-8 py-3 rounded-lg font-semibold hover:bg-beige transition-colors"
+        class="inline-block bg-white text-rose px-8 py-3 rounded-full font-semibold hover:bg-cream transition-colors shadow-lg"
       >
         Get in Touch
       </a>
