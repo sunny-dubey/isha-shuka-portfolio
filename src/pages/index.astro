@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const latestPosts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+const photos = [
+  { src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop', alt: 'Mountain landscape' },
+  { src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop', alt: 'Sunlit valley' },
+  { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop', alt: 'Foggy forest' },
+  { src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop', alt: 'Green forest path' },
+];
+---
+
+<BaseLayout title="Isha Shukla — SEO & Content Writer">
+  <!-- Hero -->
+  <Hero
+    title="Isha Shukla"
+    subtitle="SEO & Organic Growth | Tech Content Writer | Photographer"
+    ctaPrimary={{ text: 'Read My Blog', href: '/blog' }}
+    ctaSecondary={{ text: 'Get in Touch', href: '/contact' }}
+  />
+
+  <!-- About Teaser -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto text-center fade-in">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-6">
+          Words That Work, Growth That Lasts
+        </h2>
+        <p class="text-charcoal/70 text-lg leading-relaxed mb-8">
+          I help businesses grow through strategic content and SEO — turning search visibility into real revenue.
+          With a background in tech and a passion for storytelling, I create content that connects with audiences
+          and drives measurable results.
+        </p>
+        <a
+          href="/about"
+          class="inline-block text-terracotta font-medium hover:text-terracotta-dark transition-colors border-b-2 border-terracotta hover:border-terracotta-dark"
+        >
+          More about me &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Blog Posts -->
+  <section class="py-20 bg-beige">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
+          Latest from the Blog
+        </h2>
+        <p class="text-charcoal/60">Thoughts on SEO, content strategy, and growing businesses organically.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        {latestPosts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date}
+            tags={post.data.tags}
+            slug={post.id}
+          />
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/blog"
+          class="inline-block bg-charcoal text-white px-8 py-3 rounded-lg font-medium hover:bg-charcoal/80 transition-colors"
+        >
+          View All Posts
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photography Preview -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
+          Through My Lens
+        </h2>
+        <p class="text-charcoal/60">A glimpse into the world as I see it.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
+        {photos.map((photo) => (
+          <div class="overflow-hidden rounded-lg aspect-square">
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/photography"
+          class="inline-block border-2 border-charcoal text-charcoal px-8 py-3 rounded-lg font-medium hover:bg-charcoal hover:text-white transition-colors"
+        >
+          View Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-terracotta text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-in">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">
+        Let's Work Together
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+        Looking for an SEO-savvy content writer who understands tech and business? I'd love to hear about your project.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-terracotta px-8 py-3 rounded-lg font-semibold hover:bg-beige transition-colors"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</BaseLayout>

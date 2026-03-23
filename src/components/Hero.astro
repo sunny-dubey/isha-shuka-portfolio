@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaPrimary?: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+}
+
+const { title, subtitle, ctaPrimary, ctaSecondary } = Astro.props;
+---
+
+<section class="bg-beige py-20 md:py-32">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-charcoal leading-tight mb-6 fade-in">
+      {title}
+    </h1>
+    <p class="text-lg md:text-xl text-charcoal/70 max-w-2xl mx-auto mb-10 fade-in">
+      {subtitle}
+    </p>
+    {(ctaPrimary || ctaSecondary) && (
+      <div class="flex flex-wrap gap-4 justify-center fade-in">
+        {ctaPrimary && (
+          <a
+            href={ctaPrimary.href}
+            class="bg-terracotta text-white px-8 py-3 rounded-lg font-medium hover:bg-terracotta-dark transition-colors"
+          >
+            {ctaPrimary.text}
+          </a>
+        )}
+        {ctaSecondary && (
+          <a
+            href={ctaSecondary.href}
+            class="border-2 border-charcoal text-charcoal px-8 py-3 rounded-lg font-medium hover:bg-charcoal hover:text-white transition-colors"
+          >
+            {ctaSecondary.text}
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</section>

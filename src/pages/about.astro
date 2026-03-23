@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const skills = [
+  { name: 'SEO Strategy', description: 'Technical SEO, keyword research, on-page optimisation, and link building strategies that drive organic growth.' },
+  { name: 'Content Writing', description: 'Long-form articles, blog posts, landing pages, and email copy that engages and converts.' },
+  { name: 'Organic Growth', description: 'Data-driven growth strategies that reduce dependency on paid channels and build sustainable traffic.' },
+  { name: 'Business Understanding', description: 'Translating complex business goals into content strategies that align with revenue objectives.' },
+];
+
+const experience = [
+  {
+    role: 'Freelance SEO & Content Writer',
+    company: 'Self-employed',
+    period: '2024 — Present',
+    description: 'Working with startups and growing businesses to build content strategies that drive organic growth and revenue.',
+  },
+  {
+    role: 'Content Strategist',
+    company: 'Tech Startup',
+    period: '2023 — 2024',
+    description: 'Led content strategy and SEO efforts, growing organic traffic by 3x in 12 months through targeted content and technical optimisations.',
+  },
+  {
+    role: 'Content Writer',
+    company: 'Digital Agency',
+    period: '2022 — 2023',
+    description: 'Wrote SEO-optimised blog posts, case studies, and landing pages for B2B tech clients across SaaS, fintech, and healthtech.',
+  },
+];
+---
+
+<BaseLayout title="About — Isha Shukla" description="Learn more about Isha Shukla — an SEO and organic growth specialist, tech content writer, and photographer.">
+  <Hero
+    title="About Me"
+    subtitle="SEO strategist, content writer, and photographer with a passion for helping businesses grow."
+  />
+
+  <!-- Bio Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <div class="aspect-[4/5] bg-beige rounded-2xl flex items-center justify-center overflow-hidden">
+            <div class="text-center text-charcoal/40 p-8">
+              <svg class="w-24 h-24 mx-auto mb-4 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+              <p class="text-sm">Profile photo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <h2 class="font-heading text-3xl font-bold text-charcoal mb-6">
+            Hi, I'm Isha.
+          </h2>
+          <div class="space-y-4 text-charcoal/70 leading-relaxed">
+            <p>
+              I'm an SEO and organic growth specialist who believes the best marketing doesn't feel like marketing.
+              I help businesses build content ecosystems that attract, engage, and convert — all through the power
+              of search and strategic storytelling.
+            </p>
+            <p>
+              With a background in technology and a deep understanding of how businesses grow, I bring a unique
+              perspective to content creation. I don't just write — I think about keyword intent, user journeys,
+              and business impact with every piece I produce.
+            </p>
+            <p>
+              When I'm not crafting content strategies or diving into analytics, you'll find me behind a camera
+              capturing the world in frames, or exploring new places with a notebook in hand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="py-20 bg-beige">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal text-center mb-12 fade-in">
+        What I Do
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        {skills.map((skill) => (
+          <div class="bg-white rounded-xl p-6 border border-beige-dark">
+            <h3 class="font-heading text-xl font-semibold text-charcoal mb-3 flex items-center gap-2">
+              <span class="w-2 h-2 bg-terracotta rounded-full"></span>
+              {skill.name}
+            </h3>
+            <p class="text-charcoal/60 leading-relaxed">{skill.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal text-center mb-12 fade-in">
+        Experience
+      </h2>
+      <div class="space-y-8 fade-in">
+        {experience.map((exp) => (
+          <div class="border-l-2 border-terracotta pl-6 pb-2">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <h3 class="font-heading text-xl font-semibold text-charcoal">{exp.role}</h3>
+              <span class="text-charcoal/40">·</span>
+              <span class="text-terracotta font-medium">{exp.company}</span>
+            </div>
+            <p class="text-sm text-charcoal/40 mb-2">{exp.period}</p>
+            <p class="text-charcoal/60 leading-relaxed">{exp.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-olive text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-in">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">
+        Interested in Working Together?
+      </h2>
+      <p class="text-white/80 text-lg mb-8">
+        Whether you need SEO strategy, content writing, or a full content growth plan — let's chat.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-olive px-8 py-3 rounded-lg font-semibold hover:bg-beige transition-colors"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</BaseLayout>

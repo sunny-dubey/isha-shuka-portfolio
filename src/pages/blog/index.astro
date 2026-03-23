@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const allTags = [...new Set(sortedPosts.flatMap((post) => post.data.tags))].sort();
+---
+
+<BaseLayout title="Blog — Isha Shukla" description="Insights on SEO, content strategy, organic growth, and tech writing by Isha Shukla.">
+  <Hero
+    title="Blog"
+    subtitle="Insights on SEO, content strategy, and growing businesses through organic channels."
+  />
+
+  <!-- Tags -->
+  <section class="bg-white border-b border-beige-dark">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+      <div class="flex flex-wrap gap-2">
+        <span class="text-sm text-charcoal/40 py-1 mr-2">Filter:</span>
+        {allTags.map((tag) => (
+          <span class="text-xs font-medium bg-beige text-olive-dark px-3 py-1.5 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="py-16 bg-beige">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sortedPosts.map((post) => (
+          <div class="fade-in">
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              tags={post.data.tags}
+              slug={post.id}
+            />
+          </div>
+        ))}
+      </div>
+
+      {sortedPosts.length === 0 && (
+        <div class="text-center py-20">
+          <p class="text-charcoal/40 text-lg">No posts yet. Check back soon!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
