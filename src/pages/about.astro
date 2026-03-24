@@ -3,73 +3,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 
 const skills = [
-  { name: 'SEO Strategy', description: 'Technical SEO, keyword research, on-page optimisation, and link building strategies that drive organic growth.' },
-  { name: 'Content Writing', description: 'Long-form articles, blog posts, landing pages, and email copy that engages and converts.' },
-  { name: 'Organic Growth', description: 'Data-driven growth strategies that reduce dependency on paid channels and build sustainable traffic.' },
-  { name: 'Business Understanding', description: 'Translating complex business goals into content strategies that align with revenue objectives.' },
+  { name: 'Tech Content Writing', description: 'Turning complex technical ideas into clear, thoughtful, and purposeful content for IT and tech companies.' },
+  { name: 'Blog & Article Writing', description: 'Long-form articles, blog posts, and LinkedIn content that is simple, relatable, and meaningful.' },
+  { name: 'Photography', description: 'Capturing moments with honesty and depth — because life is rare and meant to be experienced fully.' },
+  { name: 'Real Estate Content', description: 'Understanding not just projects, but the stories and emotions behind them — content that connects.' },
 ];
 
 const experience = [
   {
-    role: 'Freelance SEO & Content Writer',
-    company: 'Self-employed',
-    period: '2024 — Present',
-    description: 'Working with startups and growing businesses to build content strategies that drive organic growth and revenue.',
-  },
-  {
-    role: 'Content Strategist',
-    company: 'Tech Startup',
-    period: '2023 — 2024',
-    description: 'Led content strategy and SEO efforts, growing organic traffic by 3x in 12 months through targeted content and technical optimisations.',
+    role: 'Tech Content Writer',
+    company: 'IT Company',
+    period: 'Present',
+    description: 'Turning complex ideas into clear, thoughtful, and purposeful content. Writing blogs, website content, and technical articles.',
   },
   {
     role: 'Content Writer',
-    company: 'Digital Agency',
-    period: '2022 — 2023',
-    description: 'Wrote SEO-optimised blog posts, case studies, and landing pages for B2B tech clients across SaaS, fintech, and healthtech.',
+    company: 'Real Estate',
+    period: 'Previous',
+    description: 'Worked in the real estate space, understanding not just projects but the stories and emotions behind them.',
   },
 ];
 ---
 
-<BaseLayout title="About — Isha Shukla" description="Learn more about Isha Shukla — an SEO and organic growth specialist and tech content writer.">
+<BaseLayout title="About — Isha Shukla" description="Learn more about Isha Shukla — a writer, storyteller, and photographer who believes in creating connections through words.">
   <Hero
     title="About Me"
-    subtitle="SEO strategist and content writer with a passion for helping businesses grow."
+    subtitle="Writer, storyteller, and photographer with a passion for creating meaningful connections."
   />
 
   <!-- Bio Section -->
   <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="fade-in">
-          <div class="aspect-[4/5] rounded-2xl flex items-center justify-center overflow-hidden bg-gradient-cta">
-            <div class="text-center text-white/60 p-8">
-              <svg class="w-24 h-24 mx-auto mb-4 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-              </svg>
-              <p class="text-sm">Profile photo</p>
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-2 fade-in">
+          <div class="sticky top-28">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+              <img
+                src="/images/isha.jpg"
+                alt="Isha Shukla"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="mt-6 card-elevated p-5 text-center">
+              <p class="font-accent text-xl italic text-charcoal/70 leading-relaxed">
+                "I may not aim for perfection, but I always aim to be real."
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="fade-in">
-          <h2 class="font-accent text-4xl font-semibold text-charcoal mb-6">
+        <div class="lg:col-span-3 fade-in">
+          <h2 class="font-accent text-4xl md:text-5xl font-semibold text-charcoal mb-3">
             Hi, I'm Isha.
           </h2>
-          <div class="space-y-4 text-charcoal/70 leading-relaxed">
+          <p class="inline-flex items-center gap-2 bg-gradient-to-r from-rose/15 to-lavender/15 text-rose-dark font-medium text-sm px-4 py-2 rounded-full mb-8">
+            <svg class="w-4 h-4 text-rose" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+            </svg>
+            Noida, India
+          </p>
+          <div class="space-y-5 text-charcoal/70 text-lg leading-relaxed">
             <p>
-              I'm an SEO and organic growth specialist who believes the best marketing doesn't feel like marketing.
-              I help businesses build content ecosystems that attract, engage, and convert — all through the power
-              of search and strategic storytelling.
+              Since childhood, I have always been drawn to writing. Whether it was shayari, poems, or simple thoughts,
+              expressing myself through words has always felt natural to me. Over time, this passion grew into something
+              more meaningful.
             </p>
             <p>
-              With a background in technology and a deep understanding of how businesses grow, I bring a unique
-              perspective to content creation. I don't just write — I think about keyword intent, user journeys,
-              and business impact with every piece I produce.
+              I also have a deep love for photography. When I capture a moment, I feel like I truly live it. It reminds
+              me that life is rare and meant to be experienced fully. Alongside this, I maintain a small personal space —
+              a kind of digital garden — where I collect my thoughts, learnings, and observations. It's a space that
+              reflects how I see the world, and that perspective naturally flows into my writing. I write the way I see
+              things — with honesty, depth, and attention to detail.
             </p>
             <p>
-              When I'm not crafting content strategies or diving into analytics, you'll find me behind a camera
-              capturing the world in frames, or exploring new places with a notebook in hand.
+              Currently, I work as a <strong class="text-charcoal font-medium">Tech Content Writer</strong> in an IT company, where I turn complex ideas into clear,
+              thoughtful, and purposeful content. I have also worked in the <strong class="text-charcoal font-medium">real estate space</strong>, which has helped me
+              understand not just projects, but the stories and emotions behind them.
+            </p>
+            <p>
+              For me, writing is not just about delivering information. It is about creating a connection. Whether it
+              is a blog, a LinkedIn post, or website content, I focus on making it simple, relatable, and meaningful.
+            </p>
+            <p>
+              If you are looking for content that connects and communicates clearly, I would love to work with you.
             </p>
           </div>
         </div>
@@ -80,9 +96,12 @@ const experience = [
   <!-- Skills -->
   <section class="py-20 bg-gradient-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal text-center mb-12 fade-in">
-        What I Do
-      </h2>
+      <div class="text-center mb-12 fade-in">
+        <p class="text-rose font-medium tracking-widest uppercase text-sm mb-3">What I bring</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal">
+          What I Do
+        </h2>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
         {skills.map((skill) => (
           <div class="card-elevated p-6">
@@ -100,9 +119,12 @@ const experience = [
   <!-- Experience -->
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal text-center mb-12 fade-in">
-        Experience
-      </h2>
+      <div class="text-center mb-12 fade-in">
+        <p class="text-rose font-medium tracking-widest uppercase text-sm mb-3">My journey</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal">
+          Experience
+        </h2>
+      </div>
       <div class="space-y-8 fade-in">
         {experience.map((exp) => (
           <div class="border-l-2 border-rose pl-6 pb-2">
@@ -126,7 +148,7 @@ const experience = [
         Interested in Working Together?
       </h2>
       <p class="text-white/80 text-lg mb-8">
-        Whether you need SEO strategy, content writing, or a full content growth plan — let's chat.
+        Whether you need blog content, website copy, or tech writing — let's chat.
       </p>
       <a
         href="/contact"

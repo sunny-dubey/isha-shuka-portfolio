@@ -15,15 +15,22 @@ const photos = [
   { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop', alt: 'Foggy forest' },
   { src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop', alt: 'Green forest path' },
 ];
+
+const highlights = [
+  { icon: '✍', label: 'Tech Content Writing', detail: 'Turning complex ideas into clear, purposeful content' },
+  { icon: '📷', label: 'Photography', detail: 'Capturing moments that tell stories' },
+  { icon: '🏠', label: 'Real Estate Content', detail: 'Understanding the stories behind projects' },
+  { icon: '🌱', label: 'Digital Garden', detail: 'A space for thoughts, learnings & observations' },
+];
 ---
 
-<BaseLayout title="Isha Shukla — SEO & Content Writer">
+<BaseLayout title="Isha Shukla — Tech Content Writer">
   <!-- Hero -->
   <Hero
     title="Isha Shukla"
-    subtitle="SEO & Organic Growth | Tech Content Writer"
+    subtitle="Tech Content Writer | Storyteller"
     ctaPrimary={{ text: 'Read My Blog', href: '/blog' }}
-    ctaSecondary={{ text: 'Get in Touch', href: '/contact' }}
+    ctaSecondary={{ text: 'Get in Touch', href: '#contact' }}
     gradientTitle={true}
   />
 
@@ -32,24 +39,94 @@ const photos = [
     <span class="section-divider-dot"></span>
   </div>
 
-  <!-- About Teaser -->
-  <section class="py-20 bg-white">
+  <!-- About Me — Full Section -->
+  <section id="about" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="max-w-3xl mx-auto text-center fade-in">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          Words That Work, Growth That Lasts
+      <!-- Section header -->
+      <div class="text-center mb-16 fade-in">
+        <p class="text-rose font-medium tracking-widest uppercase text-sm mb-3">Get to know me</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-charcoal">
+          About Me
         </h2>
-        <p class="text-charcoal/70 text-lg leading-relaxed mb-8">
-          I help businesses grow through strategic content and SEO — turning search visibility into real revenue.
-          With a background in tech and a passion for storytelling, I create content that connects with audiences
-          and drives measurable results.
-        </p>
-        <a
-          href="/about"
-          class="inline-block text-rose font-medium hover:text-rose-dark transition-colors border-b-2 border-rose hover:border-rose-dark"
-        >
-          More about me &rarr;
-        </a>
+      </div>
+
+      <!-- Bio with photo -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start mb-20">
+        <!-- Photo column -->
+        <div class="lg:col-span-2 fade-in">
+          <div class="sticky top-28">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden relative group">
+              <img
+                src="/images/isha.jpg"
+                alt="Isha Shukla"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Quote card below photo -->
+            <div class="mt-6 card-elevated p-5 text-center">
+              <p class="font-accent text-xl italic text-charcoal/70 leading-relaxed">
+                "I may not aim for perfection, but I always aim to be real."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio text column -->
+        <div class="lg:col-span-3 fade-in">
+          <h3 class="font-accent text-4xl md:text-5xl font-semibold text-charcoal mb-3">
+            Hi, I'm Isha.
+          </h3>
+          <p class="inline-flex items-center gap-2 bg-gradient-to-r from-rose/15 to-lavender/15 text-rose-dark font-medium text-sm px-4 py-2 rounded-full mb-8">
+            <svg class="w-4 h-4 text-rose" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+            </svg>
+            Noida, India
+          </p>
+          <div class="space-y-5 text-charcoal/70 text-lg leading-relaxed">
+            <p>
+              Since childhood, I have always been drawn to writing. Whether it was shayari, poems, or simple thoughts,
+              expressing myself through words has always felt natural to me. Over time, this passion grew into something
+              more meaningful.
+            </p>
+            <p>
+              I also have a deep love for photography. When I capture a moment, I feel like I truly live it. It reminds
+              me that life is rare and meant to be experienced fully. Alongside this, I maintain a small personal space —
+              a kind of digital garden — where I collect my thoughts, learnings, and observations. It's a space that
+              reflects how I see the world, and that perspective naturally flows into my writing. I write the way I see
+              things — with honesty, depth, and attention to detail.
+            </p>
+            <p>
+              Currently, I work as a <strong class="text-charcoal font-medium">Tech Content Writer</strong> in an IT company, where I turn complex ideas into clear,
+              thoughtful, and purposeful content. I have also worked in the <strong class="text-charcoal font-medium">real estate space</strong>, which has helped me
+              understand not just projects, but the stories and emotions behind them.
+            </p>
+            <p>
+              For me, writing is not just about delivering information. It is about creating a connection. Whether it
+              is a blog, a LinkedIn post, or website content, I focus on making it simple, relatable, and meaningful.
+            </p>
+          </div>
+
+          <!-- CTA inline -->
+          <div class="mt-8 pt-8 border-t border-cream-dark">
+            <p class="text-charcoal/80 text-lg mb-4">
+              If you are looking for content that connects and communicates clearly, I would love to work with you.
+            </p>
+            <a href="#contact" class="btn-primary">
+              Let's Connect
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- What I bring — highlight cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {highlights.map((item, i) => (
+          <div class:list={['card-elevated p-6 text-center fade-in', `fade-in-delay-${i + 1}`]}>
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h4 class="font-heading text-lg font-semibold text-charcoal mb-2">{item.label}</h4>
+            <p class="text-charcoal/60 text-sm leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -63,10 +140,11 @@ const photos = [
   <section class="py-20 bg-gradient-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12 fade-in">
+        <p class="text-rose font-medium tracking-widest uppercase text-sm mb-3">From the blog</p>
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
-          Latest from the Blog
+          Latest Writing
         </h2>
-        <p class="text-charcoal/60">Thoughts on SEO, content strategy, and growing businesses organically.</p>
+        <p class="text-charcoal/60">Thoughts on writing, content, and everything in between.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {latestPosts.map((post, i) => (
@@ -98,6 +176,7 @@ const photos = [
   <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12 fade-in">
+        <p class="text-rose font-medium tracking-widest uppercase text-sm mb-3">Photography</p>
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
           Through My Lens
         </h2>
@@ -123,21 +202,137 @@ const photos = [
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-20 bg-gradient-cta text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-in">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">
-        Let's Work Together
-      </h2>
-      <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-        Looking for an SEO-savvy content writer who understands tech and business? I'd love to hear about your project.
-      </p>
-      <a
-        href="/contact"
-        class="inline-block bg-white text-rose px-8 py-3 rounded-full font-semibold hover:bg-cream transition-colors shadow-lg"
-      >
-        Get in Touch
-      </a>
+  <!-- Section Divider -->
+  <div class="section-divider py-4 bg-gradient-section">
+    <span class="section-divider-dot"></span>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gradient-section">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-rose font-medium tracking-widest uppercase text-sm mb-3">Get in touch</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
+          Let's Work Together
+        </h2>
+        <p class="text-charcoal/60">
+          Whether you need blog content, website copy, or tech writing — drop me a message and I'll get back to you within 24 hours.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="fade-in">
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gradient-cta rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-charcoal">Email</h3>
+                <a href="mailto:hello@ishashukla.in" class="text-rose hover:text-rose-dark transition-colors">
+                  hello@ishashukla.in
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gradient-cta rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-charcoal">LinkedIn</h3>
+                <a href="https://linkedin.com/in/ishashukla" target="_blank" rel="noopener noreferrer" class="text-rose hover:text-rose-dark transition-colors">
+                  linkedin.com/in/ishashukla
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gradient-cta rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-charcoal">Instagram</h3>
+                <a href="https://instagram.com/ishashukla" target="_blank" rel="noopener noreferrer" class="text-rose hover:text-rose-dark transition-colors">
+                  @ishashukla
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gradient-cta rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-charcoal">Location</h3>
+                <p class="text-charcoal/60">Noida, India — available for remote work worldwide</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="fade-in">
+          <form
+            action="https://formspree.io/f/placeholder"
+            method="POST"
+            class="card-elevated p-8 space-y-6"
+          >
+            <div>
+              <label for="name" class="block text-sm font-medium text-charcoal mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-cream-dark bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-rose/50 focus:border-rose transition-colors"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-charcoal mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-cream-dark bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-rose/50 focus:border-rose transition-colors"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-charcoal mb-2">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-cream-dark bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-rose/50 focus:border-rose transition-colors resize-none"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn-primary w-full text-center"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
